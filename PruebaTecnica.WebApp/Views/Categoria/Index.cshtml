@@ -1,0 +1,33 @@
+﻿@model List<Producto>
+
+<h1>Productos</h1>
+<a href="/productos/crear" class="btn btn-primary">Crear Producto</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var producto in Model)
+        {
+            <tr>
+                <td>@producto.Nombre</td>
+                <td>@producto.Precio</td>
+                <td>
+                    <!-- Botón para Editar -->
+                    <a href="/productos/editar/@producto.Id" class="btn btn-warning">Editar</a>
+
+                    <!-- Formulario para Eliminar -->
+                    <form method="post" action="/productos/eliminar" style="display:inline-block;">
+                        <input type="hidden" name="id" value="@producto.Id" />
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
