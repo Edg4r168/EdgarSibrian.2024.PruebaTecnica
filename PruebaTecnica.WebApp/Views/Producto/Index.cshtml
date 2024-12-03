@@ -1,11 +1,11 @@
-﻿@model IEnumerable<Categoria>
+﻿@model IEnumerable<Producto>
 
 @{
-    ViewData["Title"] = "Lista de categorias";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Lista de categorias</h1>
+<h1>Lista de productos</h1>
 
 <p>
     <a asp-action="Create">Crear nuevo</a>
@@ -18,6 +18,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCategoria)
             </th>
             <th></th>
         </tr>
@@ -32,7 +38,13 @@
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id=item.Id  }) |
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCategoria)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
                 @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
             </td>
         </tr>

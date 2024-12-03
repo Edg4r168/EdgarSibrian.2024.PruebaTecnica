@@ -1,15 +1,15 @@
-﻿@model PruebaTecnica.EN.Categoria
+﻿@model Producto
 
 @{
     ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Borrar</h1>
+<h1>Eliminar</h1>
 
 <h3>Estas seguro de borrar este registro?</h3>
 <div>
-    <h4>Categoria</h4>
+    <h4>Producto</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -24,12 +24,24 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Nombre)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdCategoria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCategoria)
+        </dd>
     </dl>
     
     <form asp-action="Remove">
-        <input type="hidden" asp-for="Id" />
+        <input type="hidden" name="id" value="@Model.Id" />
 
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Volver</a>
     </form>
 </div>
