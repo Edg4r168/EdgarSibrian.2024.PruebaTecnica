@@ -7,7 +7,7 @@ namespace PruebaTecnica.DAL;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AgregarRepositorios(this IServiceCollection services, string connection)
+    public static IServiceCollection AddRepositories(this IServiceCollection services, string connection)
     {
         services.AddDbContext<ProductosDBContext>(options =>
         {
