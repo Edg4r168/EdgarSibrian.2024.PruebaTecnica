@@ -1,0 +1,15 @@
+CREATE DATABASE productosdb;
+
+CREATE TABLE Categorias (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE Productos (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Precio DECIMAL(10,2) NOT NULL,
+    IdCategoria INT NOT NULL,
+    FOREIGN KEY (IdCategoria) REFERENCES Categorias(Id)
+);
