@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PruebaTecnica.DAL.DBContext;
 using System.Linq.Expressions;
 
 namespace PruebaTecnica.DAL.Repositories;
 
 public class GenericRepositorie<TEntity> where TEntity : class
 {
-    private readonly DbContext _context;
+    private readonly ProductosDBContext _context;
 
-    public GenericRepositorie(DbContext context)
+    public GenericRepositorie(ProductosDBContext context)
     {
         _context = context;
     }
